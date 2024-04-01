@@ -1,10 +1,11 @@
 
 import './App.css'
-import  FormGroupExample from "./form/form";
+import  FormGroupExample from "./form/tabs";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 
 
     
@@ -19,7 +20,7 @@ function App() {
         </div>
       </header>
       <main>
-        <Container fluid="md">
+        <Container id='outer' fluid="md">
           <Row>
             <Col>
               <FormGroupExample/>
