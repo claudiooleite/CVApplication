@@ -1,8 +1,8 @@
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import PersonalInfo from './components/personal_info';
+import PersonalInfo from './components/Personal_info';
 
-function FormGroupExample() {
+function InfoTabs() {
   return (
     <Tabs
       defaultActiveKey="personal-info"
@@ -11,7 +11,7 @@ function FormGroupExample() {
       justify
     >
       <Tab eventKey="personal-info" title="Personal Info">
-        <PersonalInfo></PersonalInfo>
+        <PersonalInfo ></PersonalInfo>
       </Tab>
       <Tab eventKey="education" title="Education">
         Tab content for Contact
@@ -32,4 +32,4 @@ function FormGroupExample() {
   );
 }
 
-export default FormGroupExample;
+export default InfoTabs;
