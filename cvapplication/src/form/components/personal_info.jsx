@@ -5,8 +5,6 @@ import { useGlobalState } from '../../GlobalStateContext';
 function PersonalInfo(){
     
     const { person, setPerson } = useGlobalState();
-    
-    
 
     function handleNameChange(e){
         setPerson({
