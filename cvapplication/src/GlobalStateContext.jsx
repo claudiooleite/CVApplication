@@ -12,6 +12,13 @@ export const GlobalStateProvider = ({ children }) => {
     portfolio: '',
     github: '',
     linkedin: '',
+    title: '',
+    companyName: '',
+    location: '',
+    startDate:'',
+    endDate:'',
+    skills:'',
+    
   });
 
   return (

@@ -53,32 +53,32 @@ function PersonalInfo(){
     return (
 
     <Form>
-      <Form.Group className="mb-3" controlId="controlInput1">
+      <Form.Group className="mb-3" controlId="controlName">
         <Form.Label>Name</Form.Label>
         <Form.Control value={person.name} onChange={handleNameChange} type="text" />
         
       </Form.Group>
-      <Form.Group className="mb-3" controlId="controlText">
+      <Form.Group className="mb-3" controlId="controlHeadline">
         <Form.Label>Headline</Form.Label>
         <Form.Control value={person.headline} onChange={handleHeadlineChange} type="text" />
         
       </Form.Group>
-      <Form.Group className="mb-3" controlId="controlInput1">
+      <Form.Group className="mb-3" controlId="controlEmail">
         <Form.Label>Email Address</Form.Label>
         <Form.Control type="email" placeholder="name@example.com" value={person.email} onChange={handleEmailChange} />
         
       </Form.Group>
-      <Form.Group className="mb-3" controlId="controlTextarea1">
+      <Form.Group className="mb-3" controlId="controlPortfolio">
         <Form.Label>Portfolio</Form.Label>
         <Form.Control placeholder="link"value={person.portfolio} onChange={handlePortfolioChange} type="text" />
         
       </Form.Group>
-      <Form.Group className="mb-3" controlId="controlTextarea1">
+      <Form.Group className="mb-3" controlId="controlGitHub">
         <Form.Label>GitHub</Form.Label>
         <Form.Control value={person.github} onChange={handleGithubChange} type="text" />
         
       </Form.Group>
-      <Form.Group className="mb-3" controlId="controlTextarea1">
+      <Form.Group className="mb-3" controlId="controlLinkedin">
         <Form.Label>Linkdin</Form.Label>
         <Form.Control value={person.linkedin} onChange={handleLinkedinChange} type="text" />
         

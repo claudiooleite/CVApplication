@@ -1,6 +1,7 @@
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import PersonalInfo from './components/Personal_info';
+import Experience from './components/Experience';
 
 function InfoTabs() {
   return (
@@ -14,10 +15,10 @@ function InfoTabs() {
         <PersonalInfo ></PersonalInfo>
       </Tab>
       <Tab eventKey="education" title="Education">
-        Tab content for Contact
+        
       </Tab>
       <Tab eventKey="experience" title="Experience">
-        Tab content for Profile
+        <Experience></Experience>
       </Tab>
       <Tab eventKey="projects" title="Projects">
         Tab content for Loooonger Tab

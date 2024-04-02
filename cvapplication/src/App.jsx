@@ -8,9 +8,7 @@ import Col from 'react-bootstrap/Col';
 import InfoTabs from './form/Tabs';
 import CVPreview from './form/components/Cvpreview';
 
-
-
-    
+   
 function App() {
 
   return (
