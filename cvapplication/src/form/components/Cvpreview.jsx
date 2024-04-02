@@ -21,6 +21,24 @@ function CVPreview({person}){
         <div>
             <h2>{person.linkedin}</h2>
         </div>
+        <div>
+            <h1>{person.title}</h1>
+        </div>
+        <div>
+            <h2>{person.companyName}</h2>
+        </div>
+        <div>
+            <h1>{person.location}</h1>
+        </div>
+        <div>
+            <h2>{person.startDate}</h2>
+        </div>
+        <div>
+            <h2>{person.ednDate}</h2>
+        </div>
+        <div>
+            <h1>{person.skills}</h1>
+        </div>
         </>
     )
 }
