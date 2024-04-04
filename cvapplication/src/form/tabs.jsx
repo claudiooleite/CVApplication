@@ -3,6 +3,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import PersonalInfo from './components/Personal_info';
 import Experience from './components/Experience';
 import Education from './components/Education';
+import Projects from './components/Projects';
 
 function InfoTabs() {
   return (
@@ -13,16 +14,16 @@ function InfoTabs() {
       justify
     >
       <Tab eventKey="personal-info" title="Personal Info">
-        <PersonalInfo ></PersonalInfo>
+        <PersonalInfo/>
       </Tab>
       <Tab eventKey="education" title="Education">
-        <Education></Education>
+        <Education/>
       </Tab>
       <Tab eventKey="experience" title="Experience">
-        <Experience></Experience>
+        <Experience/>
       </Tab>
       <Tab eventKey="projects" title="Projects">
-        Tab content for Loooonger Tab
+        <Projects/>
       </Tab>
       <Tab eventKey="skills" title="Skills">
         Tab content for Contact
