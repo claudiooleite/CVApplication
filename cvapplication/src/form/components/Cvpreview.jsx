@@ -52,7 +52,7 @@ function CVPreview({person}){
             <h1>{person.grade}</h1>
         </div>
         <div>
-            <h1>{person.project}</h1>
+            <h1>{person.projectName}</h1>
         </div>
         <div>
             <h2>{person.description}</h2>

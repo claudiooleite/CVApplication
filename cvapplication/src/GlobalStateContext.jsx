@@ -17,11 +17,15 @@ export const GlobalStateProvider = ({ children }) => {
     location: '',
     startDate:'',
     endDate:'',
-    skills:'',
     school:'',
     degree:'',
     endSchoolDate:'',
     grade:'',
+    projectName:'',
+    description:'',
+    media:'',
+    skills:'',
+  
     
   });
 

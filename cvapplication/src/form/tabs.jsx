@@ -4,6 +4,7 @@ import PersonalInfo from './components/Personal_info';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Projects from './components/Projects';
+import Skills from './components/Skills';
 
 function InfoTabs() {
   return (
@@ -26,7 +27,7 @@ function InfoTabs() {
         <Projects/>
       </Tab>
       <Tab eventKey="skills" title="Skills">
-        Tab content for Contact
+        <Skills/>
       </Tab>
       <Tab eventKey="certificatios" title="Certifications">
         Tab content for Loooonger Tab
