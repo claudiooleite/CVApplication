@@ -34,10 +34,22 @@ function CVPreview({person}){
             <h2>{person.startDate}</h2>
         </div>
         <div>
-            <h2>{person.ednDate}</h2>
+            <h2>{person.endDate}</h2>
         </div>
         <div>
             <h1>{person.skills}</h1>
+        </div>
+        <div>
+            <h1>{person.school}</h1>
+        </div>
+        <div>
+            <h2>{person.degree}</h2>
+        </div>
+        <div>
+            <h2>{person.endShoolDate}</h2>
+        </div>
+        <div>
+            <h1>{person.grade}</h1>
         </div>
         </>
     )

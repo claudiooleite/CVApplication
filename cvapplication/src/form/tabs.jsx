@@ -2,6 +2,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import PersonalInfo from './components/Personal_info';
 import Experience from './components/Experience';
+import Education from './components/Education';
 
 function InfoTabs() {
   return (
@@ -15,7 +16,7 @@ function InfoTabs() {
         <PersonalInfo ></PersonalInfo>
       </Tab>
       <Tab eventKey="education" title="Education">
-        
+        <Education></Education>
       </Tab>
       <Tab eventKey="experience" title="Experience">
         <Experience></Experience>

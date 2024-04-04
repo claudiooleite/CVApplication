@@ -18,6 +18,10 @@ export const GlobalStateProvider = ({ children }) => {
     startDate:'',
     endDate:'',
     skills:'',
+    school:'',
+    degree:'',
+    endSchoolDate:'',
+    grade:'',
     
   });
 
