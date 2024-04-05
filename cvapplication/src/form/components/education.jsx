@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import { useGlobalState } from '../../GlobalStateContext';
 
 function Education(){
-
+  
 const { person, setPerson } = useGlobalState();
 
     function handleSchoolChange(e){
@@ -47,16 +47,15 @@ const { person, setPerson } = useGlobalState();
       <Form.Group className="mb-3" controlId="controlDegree">
         <Form.Label>Degree</Form.Label>
         <Form.Control value={person.degree} onChange={handleDegreeChange} type="text" />
-        
       </Form.Group>
-      <Form.Group className="mb-3" controlId="controlGraduationDate">
+        <Form.Group className="mb-3" controlId="controlGraduationDate">
         <Form.Label>Graduation Date</Form.Label>
-        <Form.Control type="email" placeholder="name@example.com" value={person.endSchoolDate} onChange={handleEndSchoolDateChange} />
+         <Form.Control type="date" placeholder='dd.mm.yyyy' value={person.endSchoolDate} onChange={handleEndSchoolDateChange} />
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlGrade">
         <Form.Label>Grade</Form.Label>
-        <Form.Control placeholder="link"value={person.grade} onChange={handleGradeChange} type="text" />
+        <Form.Control value={person.grade} onChange={handleGradeChange} type="text" />
         
       </Form.Group>
     </Form>

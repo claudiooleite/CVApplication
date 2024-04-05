@@ -23,6 +23,18 @@ function CVPreview({person}){
             <a href={person.linkedin}>{person.linkedin}</a>
         </div>
         <div>
+            <h1>{person.school}</h1>
+        </div>
+        <div>
+            <h2>{person.degree}</h2>
+        </div>
+        <div>
+            <h2>{person.endSchoolDate}</h2>
+        </div>
+        <div>
+            <h1>{person.grade}</h1>
+        </div>
+        <div>
             <h1>{person.title}</h1>
         </div>
         <div>
@@ -37,18 +49,7 @@ function CVPreview({person}){
         <div>
             <h2>{person.endDate}</h2>
         </div>
-        <div>
-            <h1>{person.school}</h1>
-        </div>
-        <div>
-            <h2>{person.degree}</h2>
-        </div>
-        <div>
-            <h2>{person.endShoolDate}</h2>
-        </div>
-        <div>
-            <h1>{person.grade}</h1>
-        </div>
+      
         <div>
             <h1>{person.projectName}</h1>
         </div>
