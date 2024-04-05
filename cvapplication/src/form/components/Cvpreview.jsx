@@ -1,6 +1,7 @@
 
 
 function CVPreview({person}){
+    
     return(
         <>
         <div>
@@ -10,16 +11,16 @@ function CVPreview({person}){
             <h2>{person.headline}</h2>
         </div>
         <div>
-            <h1>{person.email}</h1>
+            <a href={`mailto:${person.email}`}>{person.email}</a>
         </div>
         <div>
-            <h2>{person.portfolio}</h2>
+            <a href={person.portfolio}>{person.portfolio}</a>
         </div>
         <div>
-            <h1>{person.github}</h1>
+            <a href={person.github}>{person.github}</a>
         </div>
         <div>
-            <h2>{person.linkedin}</h2>
+            <a href={person.linkedin}>{person.linkedin}</a>
         </div>
         <div>
             <h1>{person.title}</h1>
