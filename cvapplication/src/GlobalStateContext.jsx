@@ -25,6 +25,9 @@ export const GlobalStateProvider = ({ children }) => {
     description:'',
     media:'',
     skills:'',
+    certificationName:'',
+    issuingOrganization:'',
+    issueDate:'',
   
     
   });

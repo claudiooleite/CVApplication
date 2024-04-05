@@ -39,13 +39,6 @@ function Experience(){
             });
         }
     
-    function handleSkillsChange(e){
-        setPerson({
-            ...person,
-            skills:e.target.value
-            });
-        }
-
     return (
     <Form>
       <Form.Group className="mb-3" controlId="controlTitle">
@@ -71,11 +64,6 @@ function Experience(){
       <Form.Group className="mb-3" controlId="controlEnd">
         <Form.Label>End Date</Form.Label>
         <Form.Control value={person.endDate} onChange={handleEndDateChange} type="text" />
-        
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="controlSkills">
-        <Form.Label>Skills</Form.Label>
-        <Form.Control value={person.skills} onChange={handleSkillsChange} type="text" />
         
       </Form.Group>
     </Form>

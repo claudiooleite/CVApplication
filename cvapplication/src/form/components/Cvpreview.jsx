@@ -37,9 +37,6 @@ function CVPreview({person}){
             <h2>{person.endDate}</h2>
         </div>
         <div>
-            <h1>{person.skills}</h1>
-        </div>
-        <div>
             <h1>{person.school}</h1>
         </div>
         <div>
@@ -60,6 +57,19 @@ function CVPreview({person}){
         <div>
             <h2>{person.media}</h2>
         </div>
+        <div>
+            <h1>{person.skills}</h1>
+        </div>
+        <div>
+            <h1>{person.certificationName}</h1>
+        </div>
+        <div>
+            <h2>{person.issuingOrganization}</h2>
+        </div>
+        <div>
+            <h2>{person.issueDate}</h2>
+        </div>
+
         </>
     )
 }
