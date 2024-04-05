@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {GlobalStateProvider, useGlobalState } from './GlobalStateContext';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,6 +10,7 @@ import CVPreview from './form/components/Cvpreview';
 
    
 function App() {
+  
 
   return (
     <div>
@@ -32,14 +33,20 @@ function App() {
 }
 function AppContent() {
   const { person } = useGlobalState();
+  const [educationEntries, setEducationEntries] = useState([]);
+
+  const handleAddEducation = (newEducationEntry) => {
+    setEducationEntries([...educationEntries, newEducationEntry]);
+  };
+
 
   return (
     <>
       <Col>
-        <InfoTabs/>
+        <InfoTabs onAddEducation={handleAddEducation}/>
       </Col>
       <Col>
-        <CVPreview person={person}></CVPreview>
+        <CVPreview educationEntries={educationEntries} person={person}></CVPreview>
       </Col>
     </>
 )}

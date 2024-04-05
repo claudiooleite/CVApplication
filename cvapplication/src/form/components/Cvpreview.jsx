@@ -1,6 +1,6 @@
 
 
-function CVPreview({person}){
+function CVPreview({person, educationEntries}){
     
     return(
         <>
@@ -23,17 +23,16 @@ function CVPreview({person}){
             <a href={person.linkedin}>{person.linkedin}</a>
         </div>
         <div>
-            <h1>{person.school}</h1>
+            {educationEntries.map((entry, index) => (
+            <div key={index}>
+            <p>{entry.school}</p>
+            <p>{entry.degree}</p>
+            <p>{entry.endSchoolDate}</p>
+            <p>{entry.grade}</p>
+            </div>
+            ))}
         </div>
-        <div>
-            <h2>{person.degree}</h2>
-        </div>
-        <div>
-            <h2>{person.endSchoolDate}</h2>
-        </div>
-        <div>
-            <h1>{person.grade}</h1>
-        </div>
+        
         <div>
             <h1>{person.title}</h1>
         </div>

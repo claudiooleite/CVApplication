@@ -1,63 +1,52 @@
-import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { useGlobalState } from '../../GlobalStateContext';
+import React, {useState} from 'react';
 
-function Education(){
+
+
+function Education({onAddEducation}){
   
-const { person, setPerson } = useGlobalState();
 
-    function handleSchoolChange(e){
-        setPerson({
-           ...person,
-           school:e.target.value
-        });
-    }
+const [school, setSchool] = useState('');
+const [degree, setDegree] = useState('');
+const [endSchoolDate, setSchoolDate] = useState('');
+const [grade, setGrade] = useState('');
 
-    function handleDegreeChange(e){
-        setPerson({
-           ...person,
-           degree:e.target.value
-        });
 
-    }
+const handleAddEducationClick = (e) => {
+  e.preventDefault();
+  const newEducationEntry = { school, degree, endSchoolDate, grade };
+  onAddEducation(newEducationEntry);
+  setSchool('');
+  setDegree('');
+  setSchoolDate('');
+  setGrade('');
+  
+ };
 
-    function handleEndSchoolDateChange(e){
-        setPerson({
-           ...person,
-           endSchoolDate:e.target.value
-        });
-    }
-
-    function handleGradeChange(e){
-        setPerson({
-           ...person,
-           grade:e.target.value
-        });
-    }
 
 
     return (
-
+      
     <Form>
-      <Form.Group className="mb-3" controlId="controlSchool">
-        <Form.Label>School</Form.Label>
-        <Form.Control value={person.school} onChange={handleSchoolChange} type="text" />
+        <Form.Group className="mb-3" controlId="controlSchool">
+          <Form.Label>School</Form.Label>
+          <Form.Control  value={school} onChange={(e) => setSchool(e.target.value)} type="text" />
         
       </Form.Group>
-      <Form.Group className="mb-3" controlId="controlDegree">
-        <Form.Label>Degree</Form.Label>
-        <Form.Control value={person.degree} onChange={handleDegreeChange} type="text" />
-      </Form.Group>
+        <Form.Group className="mb-3" controlId="controlDegree">
+          <Form.Label>Degree</Form.Label>
+          <Form.Control  value={degree} onChange={(e) => setDegree(e.target.value)} type="text" />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="controlGraduationDate">
-        <Form.Label>Graduation Date</Form.Label>
-         <Form.Control type="date" placeholder='dd.mm.yyyy' value={person.endSchoolDate} onChange={handleEndSchoolDateChange} />
+          <Form.Label>Graduation Date</Form.Label>
+          <Form.Control  type="date" value={endSchoolDate} onChange={(e) => setSchoolDate(e.target.value)} />
         
       </Form.Group>
-      <Form.Group className="mb-3" controlId="controlGrade">
-        <Form.Label>Grade</Form.Label>
-        <Form.Control value={person.grade} onChange={handleGradeChange} type="text" />
-        
+        <Form.Group className="mb-3" controlId="controlGrade">
+          <Form.Label>Grade</Form.Label>
+          <Form.Control  value={grade} onChange={(e) => setGrade(e.target.value)} type="text"/>
       </Form.Group>
+      <button onClick={handleAddEducationClick}>Add Education</button>
     </Form>
   );
 }
