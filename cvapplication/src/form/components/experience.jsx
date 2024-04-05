@@ -1,71 +1,58 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useGlobalState } from '../../GlobalStateContext';
+
   
-function Experience(){
+function Experience({onAddExperience}){
       
-    const { person, setPerson } = useGlobalState();
+    
+    const [title, setTitle] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [location, setLocation] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+
+
+  const handleAddExperienceClick = (e) => {
+    e.preventDefault();
+    const newExperienceEntry = { title, companyName, location, startDate, endDate};
+    onAddExperience(newExperienceEntry);
+    setTitle('');
+    setCompanyName('');
+    setLocation('');
+    setStartDate('');
+    setEndDate('');
+  };
   
-    function handleTitleChange(e){
-        setPerson({
-            ...person,
-            title:e.target.value
-        });
-    }
-
-    function handleCompanyNameChange(e){
-        setPerson({
-           ...person,
-           companyName:e.target.value
-        });
-    }
-    function handleLocationChange(e){
-        setPerson({
-            ...person,
-            location:e.target.value
-            });
-        }
-    function handleStartDateChange(e){
-        setPerson({
-            ...person,
-            startDate:e.target.value
-            });
-        }
-
-    function handleEndDateChange(e){
-        setPerson({
-        ...person,
-            endDate:e.target.value
-            });
-        }
     
     return (
     <Form>
       <Form.Group className="mb-3" controlId="controlTitle">
         <Form.Label>Title</Form.Label>
-        <Form.Control value={person.title} onChange={handleTitleChange} type="text" />
+        <Form.Control value={title} onChange={(e) => setTitle(e.target.value)} type="text" />
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlName">
         <Form.Label>Company Name</Form.Label>
-        <Form.Control value={person.companyName} onChange={handleCompanyNameChange} type="text" />
+        <Form.Control value={companyName} onChange={(e) => setCompanyName(e.target.value)} type="text" />
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlLocation">
         <Form.Label>Location</Form.Label>
-        <Form.Control type="text"  value={person.location} onChange={handleLocationChange} />
+        <Form.Control type="text"  value={location} onChange={(e) => setLocation(e.target.value)} />
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlStart">
         <Form.Label>Start Date</Form.Label>
-        <Form.Control  value={person.startDate} onChange={handleStartDateChange} type="text" />
+        <Form.Control  value={startDate} onChange={(e) => setStartDate(e.target.value)} type="text" />
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlEnd">
         <Form.Label>End Date</Form.Label>
-        <Form.Control value={person.endDate} onChange={handleEndDateChange} type="text" />
+        <Form.Control value={endDate} onChange={(e) => setEndDate(e.target.value)} type="text" />
         
       </Form.Group>
+      <Button onClick={handleAddExperienceClick}>Add Education</Button>
     </Form>
   );
 

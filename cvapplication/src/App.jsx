@@ -34,19 +34,28 @@ function App() {
 function AppContent() {
   const { person } = useGlobalState();
   const [educationEntries, setEducationEntries] = useState([]);
+  const [experienceEntries, setExperienceEntries] = useState([]);
 
   const handleAddEducation = (newEducationEntry) => {
     setEducationEntries([...educationEntries, newEducationEntry]);
   };
 
+  const handleAddExperience = (newExperienceEntry) => {
+    setExperienceEntries([...experienceEntries, newExperienceEntry])
+  }
+
 
   return (
     <>
       <Col>
-        <InfoTabs onAddEducation={handleAddEducation}/>
+        <InfoTabs onAddEducation={handleAddEducation} onAddExperience={handleAddExperience}/>
       </Col>
       <Col>
-        <CVPreview educationEntries={educationEntries} person={person}></CVPreview>
+        <CVPreview 
+        educationEntries={educationEntries} 
+        experienceEntries={experienceEntries} 
+        person={person}
+        />
       </Col>
     </>
 )}
