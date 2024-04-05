@@ -1,5 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import React, {useState} from 'react';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -46,7 +47,7 @@ const handleAddEducationClick = (e) => {
           <Form.Label>Grade</Form.Label>
           <Form.Control  value={grade} onChange={(e) => setGrade(e.target.value)} type="text"/>
       </Form.Group>
-      <button onClick={handleAddEducationClick}>Add Education</button>
+      <Button onClick={handleAddEducationClick}>Add Education</Button>
     </Form>
   );
 }
