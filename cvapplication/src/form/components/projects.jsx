@@ -1,47 +1,40 @@
-import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { useGlobalState } from '../../GlobalStateContext';
+import React, {useState} from 'react';
+import Button from 'react-bootstrap/Button';
   
-function Projects(){
+function Projects({onAddProject}){
       
-    const { person, setPerson } = useGlobalState();
+  const [projectName, setProjectName] = useState('');
+  const [description, setDescription] = useState('');
+  const [media, setMedia] = useState('');
   
-    function handleProjectNameChange(e){
-        setPerson({
-            ...person,
-            projectName:e.target.value
-        });
-    }
 
-    function handleDescriptionChange(e){
-        setPerson({
-           ...person,
-           description:e.target.value
-        });
-    }
-    function handleMediaChange(e){
-        setPerson({
-            ...person,
-            media:e.target.value
-            });
-        }
+    const handleAddProjectClick = (e) => {
+      e.preventDefault();
+      const newProjectEntry = { projectName, description, media};
+      onAddProject(newProjectEntry);
+      setProjectName('');
+      setDescription('');
+      setMedia('');
+      
+     };
+    
     
     return (
     <Form>
       <Form.Group className="mb-3" controlId="controlProject">
         <Form.Label>Project Name</Form.Label>
-        <Form.Control value={person.projectName} onChange={handleProjectNameChange} type="text" />
+        <Form.Control value={projectName} onChange={(e) => setProjectName(e.target.value)} type="text" />
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlDescription">
         <Form.Label>Description</Form.Label>
-        <Form.Control type="text"  value={person.description} onChange={handleDescriptionChange} />
-        
+        <Form.Control  value={description} onChange={(e) => setDescription(e.target.value)} type="text" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlMedia">
         <Form.Label>Media</Form.Label>
-        <Form.Control  value={person.media} onChange={handleMediaChange} type="text" />
-        
+        <Form.Control  value={media} onChange={(e) => setMedia(e.target.value)} type="text" />
+        <Button onClick={handleAddProjectClick}>Add Education</Button>
       </Form.Group>
     </Form>
   );

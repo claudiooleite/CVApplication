@@ -35,25 +35,33 @@ function AppContent() {
   const { person } = useGlobalState();
   const [educationEntries, setEducationEntries] = useState([]);
   const [experienceEntries, setExperienceEntries] = useState([]);
+  const [projectEntries, setProjectEntries] = useState([]);
 
-  const handleAddEducation = (newEducationEntry) => {
+
+  function handleAddEducation(newEducationEntry) {
     setEducationEntries([...educationEntries, newEducationEntry]);
-  };
-
-  const handleAddExperience = (newExperienceEntry) => {
-    setExperienceEntries([...experienceEntries, newExperienceEntry])
   }
+
+  function handleAddExperience(newExperienceEntry) {
+    setExperienceEntries([...experienceEntries, newExperienceEntry]);
+  }
+
+  function handleProject(newProjectEntry) {
+    setProjectEntries([...projectEntries, newProjectEntry]);
+  }
+
 
 
   return (
     <>
       <Col>
-        <InfoTabs onAddEducation={handleAddEducation} onAddExperience={handleAddExperience}/>
+        <InfoTabs onAddEducation={handleAddEducation} onAddExperience={handleAddExperience}  onAddProject={handleProject}/>
       </Col>
       <Col>
         <CVPreview 
         educationEntries={educationEntries} 
-        experienceEntries={experienceEntries} 
+        experienceEntries={experienceEntries}
+        projectEntries={projectEntries}
         person={person}
         />
       </Col>

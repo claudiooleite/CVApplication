@@ -7,7 +7,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 
-function InfoTabs({onAddEducation, onAddExperience}) {
+function InfoTabs({onAddEducation, onAddExperience, onAddProject}) {
   return (
     <Tabs
       defaultActiveKey="personal-info"
@@ -25,7 +25,7 @@ function InfoTabs({onAddEducation, onAddExperience}) {
         <Experience onAddExperience={onAddExperience}/>
       </Tab>
       <Tab eventKey="projects" title="Projects">
-        <Projects/>
+        <Projects onAddProject={onAddProject}/>
       </Tab>
       <Tab eventKey="skills" title="Skills">
         <Skills/>
