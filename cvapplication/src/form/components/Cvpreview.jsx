@@ -1,14 +1,19 @@
 
 
 function CVPreview({person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries}){
-    
+    const personNameStyle = {
+        display: 'grid',
+        justifyContent: 'center',
+        fontWeight: 'bold'
+    }
     return(
         <>
         <div>
-            <h1>{person.name}</h1>
+            <h1 style={{ ...personNameStyle, textTransform: 'uppercase' }}>{person.name} {person.surname}</h1>
         </div>
+    
         <div>
-            <h2>{person.headline}</h2>
+            <h2 style= {{borderBottom: '5px double #1C6EA4', display: 'grid', justifyContent: 'center',}}>{person.headline}</h2>
         </div>
         <div>
             <a href={`mailto:${person.email}`}>{person.email}</a>

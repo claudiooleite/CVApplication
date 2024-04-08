@@ -7,6 +7,7 @@ export const useGlobalState = () => useContext(GlobalStateContext);
 export const GlobalStateProvider = ({ children }) => {
   const [person, setPerson] = useState({
     name: '',
+    surname:'',
     headline: '',
     email: '',
     portfolio: '',

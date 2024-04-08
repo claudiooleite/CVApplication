@@ -12,6 +12,12 @@ function PersonalInfo(){
            name:e.target.value
         });
     }
+    function handleSurnameChange(e){
+      setPerson({
+         ...person,
+         surname:e.target.value
+      });
+  }
 
     function handleHeadlineChange(e){
         setPerson({
@@ -56,6 +62,11 @@ function PersonalInfo(){
       <Form.Group className="mb-3" controlId="controlName">
         <Form.Label>Name</Form.Label>
         <Form.Control value={person.name} onChange={handleNameChange} type="text" />
+        
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="controlSurname">
+        <Form.Label>Surname</Form.Label>
+        <Form.Control value={person.surname} onChange={handleSurnameChange} type="text" />
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlHeadline">
