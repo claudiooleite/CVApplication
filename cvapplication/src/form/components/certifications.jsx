@@ -1,44 +1,38 @@
-import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { useGlobalState } from '../../GlobalStateContext';
-  
-function Certifications(){
+import React, {useState} from 'react';
+import Button from 'react-bootstrap/Button';
+ 
+function Certifications({onAddCertifications}){
       
-    const { person, setPerson } = useGlobalState();
+  const [certificationName, setCertificationName] = useState('');
+  const [issuingOrganization, setIssuingOrganization] = useState('');
+  const [issueDate, setIssueDate] = useState('');
   
-    function handleCertificationNameChange(e){
-        setPerson({
-            ...person,
-            certificationName:e.target.value
-        });
-    }
-    function handleIssuingOrganizationChange(e){
-        setPerson({
-            ...person,
-            issuingOrganization:e.target.value
-        });
-    }
-    function handleIssueDateChange(e){
-        setPerson({
-            ...person,
-            issueDate:e.target.value
-        });
-    }
+  const handleAddCertificationsClick = (e) => {
+    e.preventDefault();
+    const newCertificationsEntry = { certificationName, issuingOrganization, issueDate };
+    onAddCertifications(newCertificationsEntry);
+    setCertificationName('');
+    setIssueDate('');
+    setIssuingOrganization('');
+   };
 
     return (
     <Form>
       <Form.Group className="mb-3" controlId="controlCertifications">
         <Form.Label>Certification Name</Form.Label>
-        <Form.Control value={person.certificationName} onChange={handleCertificationNameChange} type="text" />
+        <Form.Control value={certificationName} onChange={(e) => setCertificationName(e.target.value)} type="text" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlIssuingOrganization">
         <Form.Label>Issuing Organization</Form.Label>
-        <Form.Control value={person.issuingOrganization} onChange={handleIssuingOrganizationChange} type="text" />
+        <Form.Control value={issuingOrganization} onChange={(e) => setIssuingOrganization(e.target.value)} type="text" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlIssueDate">
         <Form.Label>Issue Date</Form.Label>
-        <Form.Control value={person.issueDate} onChange={handleIssueDateChange} type="text" />
+        <Form.Control value={issueDate} onChange={(e) => setIssueDate(e.target.value)} type="text" />
       </Form.Group>
+      <Button onClick={handleAddCertificationsClick}>Add Certification</Button>
+
     </Form>
   );
 

@@ -1,6 +1,6 @@
 
 
-function CVPreview({person, educationEntries, experienceEntries, projectEntries, skillsEntries}){
+function CVPreview({person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries}){
     
     return(
         <>
@@ -63,15 +63,14 @@ function CVPreview({person, educationEntries, experienceEntries, projectEntries,
             ))}
         </div>
         <div>
-            <h1>{person.certificationName}</h1>
+            {certificationsEntries.map((entry, index) => (
+            <div key={index}>
+            <p>{entry.certificationName}</p>
+            <p>{entry.issuingOrganization}</p>
+            <p>{entry.issueDate}</p>
+            </div>
+            ))}
         </div>
-        <div>
-            <h2>{person.issuingOrganization}</h2>
-        </div>
-        <div>
-            <h2>{person.issueDate}</h2>
-        </div>
-
         </>
     )
 }
