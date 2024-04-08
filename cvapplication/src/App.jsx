@@ -36,6 +36,7 @@ function AppContent() {
   const [educationEntries, setEducationEntries] = useState([]);
   const [experienceEntries, setExperienceEntries] = useState([]);
   const [projectEntries, setProjectEntries] = useState([]);
+  const [skillsEntries, setSkillsEntries] = useState([]);
 
 
   function handleAddEducation(newEducationEntry) {
@@ -50,18 +51,27 @@ function AppContent() {
     setProjectEntries([...projectEntries, newProjectEntry]);
   }
 
+  function handleSkills(newSkillsEntry) {
+    setSkillsEntries([...skillsEntries, newSkillsEntry]);
+  }
+
 
 
   return (
     <>
       <Col>
-        <InfoTabs onAddEducation={handleAddEducation} onAddExperience={handleAddExperience}  onAddProject={handleProject}/>
+        <InfoTabs 
+        onAddEducation={handleAddEducation} 
+        onAddExperience={handleAddExperience}  
+        onAddProject={handleProject} 
+        onAddSkills={handleSkills}/>
       </Col>
       <Col>
         <CVPreview 
         educationEntries={educationEntries} 
         experienceEntries={experienceEntries}
         projectEntries={projectEntries}
+        skillsEntries={skillsEntries}
         person={person}
         />
       </Col>

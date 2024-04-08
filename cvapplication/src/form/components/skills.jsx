@@ -1,26 +1,25 @@
-import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { useGlobalState } from '../../GlobalStateContext';
-  
-function Skills(){
-      
-    const { person, setPerson } = useGlobalState();
-  
-    function handleSkillsChange(e){
-        setPerson({
-            ...person,
-            skills:e.target.value
-        });
-    }
+import React, {useState} from 'react';
+import Button from 'react-bootstrap/Button';
+ 
+function Skills({onAddSkills}){
+      const [skills, setSkills] = useState('');
 
+      const handleAddSkillsClick = (e) => {
+        e.preventDefault();
+        const newSkillsEntry = {skills}
+        onAddSkills(newSkillsEntry)
+        setSkills('');
+      }
+  
     return (
     <Form>
       <Form.Group className="mb-3" controlId="controlSkills">
         <Form.Label>Skills</Form.Label>
-        <Form.Control value={person.skills} onChange={handleSkillsChange} type="text" />
-        
-      
+        <Form.Control value={skills} onChange={(e) => setSkills(e.target.value)} type="text" />
       </Form.Group>
+      <Button onClick={handleAddSkillsClick}>Add Skills</Button>
+
     </Form>
   );
 
