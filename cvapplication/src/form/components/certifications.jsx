@@ -29,7 +29,7 @@ function Certifications({onAddCertifications}){
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlIssueDate">
         <Form.Label>Issue Date</Form.Label>
-        <Form.Control value={issueDate} onChange={(e) => setIssueDate(e.target.value)} type="text" />
+        <Form.Control value={issueDate} onChange={(e) => setIssueDate(e.target.value)} type="date" />
       </Form.Group>
       <Button onClick={handleAddCertificationsClick}>Add Certification</Button>
 

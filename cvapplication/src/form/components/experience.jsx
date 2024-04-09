@@ -44,12 +44,12 @@ function Experience({onAddExperience}){
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlStart">
         <Form.Label>Start Date</Form.Label>
-        <Form.Control  value={startDate} onChange={(e) => setStartDate(e.target.value)} type="text" />
+        <Form.Control  value={startDate} onChange={(e) => setStartDate(e.target.value)} type="date" />
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="controlEnd">
         <Form.Label>End Date</Form.Label>
-        <Form.Control value={endDate} onChange={(e) => setEndDate(e.target.value)} type="text" />
+        <Form.Control value={endDate} onChange={(e) => setEndDate(e.target.value)} type="date" />
         
       </Form.Group>
       <Button onClick={handleAddExperienceClick}>Add Education</Button>
