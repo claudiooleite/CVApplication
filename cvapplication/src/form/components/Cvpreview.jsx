@@ -4,13 +4,13 @@ function CVPreview({person, educationEntries, experienceEntries, projectEntries,
     const personNameStyle = {
         display: 'grid',
         justifyContent: 'center',
-        fontWeight: 'bold'
+        
     }
     return(
         <>
         
             <div>
-                <h1 style={{ ...personNameStyle, textTransform: 'uppercase' }}>{person.name} {person.surname}</h1>
+                <h1 style={{ ...personNameStyle, textTransform: 'uppercase' }}><b>{person.name}</b> {person.surname}</h1>
             </div>
         
             <div>
