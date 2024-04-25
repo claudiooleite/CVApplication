@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import InfoTabs from './form/Tabs';
-import CVPreview from './form/components/Cvpreview';
-import BtnConvertToPdf from './form/components/BtnConvertPdf';
+import InfoTabs from './components/Tabs';
+import CVPreview from './components/Cvpreview';
+import BtnConvertToPdf from './components/BtnConvertPdf';
 
    
 function App() {

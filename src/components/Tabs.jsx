@@ -1,11 +1,11 @@
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import PersonalInfo from './components/Personal_info';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Certifications from './components/Certifications';
+import PersonalInfo from './Personal_info';
+import Experience from './Experience';
+import Education from './Education';
+import Projects from './Projects';
+import Skills from './Skills';
+import Certifications from './Certifications';
 
 function InfoTabs({onAddEducation, onAddExperience, onAddProject, onAddSkills, onAddCertifications}) {
   return (
