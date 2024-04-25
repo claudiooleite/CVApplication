@@ -1,5 +1,5 @@
 import React from 'react';
-import convertToPdf from './PdfGenerator';
+import ConvertToPdf from './PdfGenerator';
 import CVPreview from './Cvpreview';
 
 
@@ -7,7 +7,7 @@ const BtnConvertToPdf = () => {
   const contentToConvert = CVPreview;
 
   const handleConvertClick = () => {
-    convertToPdf(contentToConvert);
+    ConvertToPdf(contentToConvert);
   };
 
   return (
