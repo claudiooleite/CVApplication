@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertToPdf } from './pdfGenerator';
+import convertToPdf from './PdfGenerator';
 import CVPreview from './Cvpreview';
 
 

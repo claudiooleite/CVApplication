@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const convertToPdf = async (htmlContent) => {
+const convertToPdf = async (htmlContent) => {
   try {
     const apiKey = 'evIVnlwRTp9RdC9C'; 
     const apiUrl = 'https://v2.convertapi.com/convert/web/to/pdf';
@@ -37,3 +37,5 @@ export const convertToPdf = async (htmlContent) => {
     console.error('Error converting to PDF:', error);
   }
 };
+
+export default convertToPdf;
