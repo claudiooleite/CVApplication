@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InfoTabs from './form/Tabs';
 import CVPreview from './form/components/Cvpreview';
+import BtnConvertToPdf from './form/components/BtnConvertPdf';
 
    
 function App() {
@@ -26,11 +27,17 @@ function App() {
               <AppContent></AppContent>
             </Row>
           </Container>
+          <Container>
+            <BtnConvertToPdf/>
+          </Container>
         </main>
+        
       </GlobalStateProvider>
     </div>
   )
-}
+};
+
+
 function AppContent() {
   const { person } = useGlobalState();
   const [educationEntries, setEducationEntries] = useState([]);

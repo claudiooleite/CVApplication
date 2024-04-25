@@ -1,11 +1,14 @@
 
 
+
+
 function CVPreview({person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries}){
     const personNameStyle = {
         display: 'grid',
         justifyContent: 'center',
         
     }
+
     return(
         <>
         
