@@ -1,48 +1,39 @@
+import axios from 'axios';
 
-import React from 'react';
-import { PDFViewer, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
-import CVPreview from './Cvpreview';
+export const convertToPdf = async (htmlContent) => {
+  try {
+    const apiKey = 'evIVnlwRTp9RdC9C'; 
+    const apiUrl = 'https://v2.convertapi.com/convert/web/to/pdf';
+    
+    const response = await axios.post(apiUrl, {
+      Parameters: [
+        {
+          Name: 'Html',
+          Value: htmlContent
+        }
+      ],
+      ConversionTimeout: 180 // 3 minutes timeout
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      responseType: 'arraybuffer' // response type as arraybuffer to get PDF file
+    });
 
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'column',
-    padding: 20,
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-  },
-});
-
-const PDFDocument = ({ person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries }) => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <CVPreview
-          person={person}
-          educationEntries={educationEntries}
-          experienceEntries={experienceEntries}
-          projectEntries={projectEntries}
-          skillsEntries={skillsEntries}
-          certificationsEntries={certificationsEntries}
-        />
-      </View>
-    </Page>
-  </Document>
-);
-
-const PDFGenerator = ({ person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries }) => (
-  <PDFViewer style={{ width: '100%', height: '100vh' }}>
-    <PDFDocument
-      person={person}
-      educationEntries={educationEntries}
-      experienceEntries={experienceEntries}
-      projectEntries={projectEntries}
-      skillsEntries={skillsEntries}
-      certificationsEntries={certificationsEntries}
-    />
-  </PDFViewer>
-);
-
-export default PDFGenerator;
+    // Create a blob from the response data
+    const blob = new Blob([response.data], { type: 'application/pdf' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = 'converted.pdf';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+    
+  } catch (error) {
+    console.error('Error converting to PDF:', error);
+  }
+};
