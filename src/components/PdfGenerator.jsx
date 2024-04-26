@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import ConvertApi from 'convertapi-js';
-import CVPreview from './Cvpreview';
+// import React from 'react';
+// import ReactDOMServer from 'react-dom/server';
+// import ConvertApi from 'convertapi-js';
+// import CVPreview from './Cvpreview';
 
 const ConvertToPdf = async () => {
   try {

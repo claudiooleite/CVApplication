@@ -10,6 +10,7 @@ import Certifications from './Certifications';
 function InfoTabs({onAddEducation, onAddExperience, onAddProject, onAddSkills, onAddCertifications}) {
   return (
     <Tabs
+      
       defaultActiveKey="personal-info"
       id="justify-tab-example"
       className="mb-3"

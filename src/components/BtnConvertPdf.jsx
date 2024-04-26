@@ -1,6 +1,6 @@
-import React from 'react';
-import ConvertToPdf from './PdfGenerator';
-import CVPreview from './Cvpreview';
+// import React from 'react';
+// import ConvertToPdf from './PdfGenerator';
+// import CVPreview from './Cvpreview';
 
 
 const BtnConvertToPdf = ({ person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries }) => {

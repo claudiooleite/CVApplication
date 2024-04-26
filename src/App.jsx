@@ -7,18 +7,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InfoTabs from './components/Tabs';
 import CVPreview from './components/Cvpreview';
+
 // import BtnConvertToPdf from './components/BtnConvertPdf';
 
    
 function App() {
-  
-
   return (
     <div>
       <GlobalStateProvider>
         <header>
           <div>
-            <h1>CV App</h1>
+            <h1 
+            id="demoFont" 
+            style={{marginLeft: '100px' }}
+            >CV APP</h1>
           </div>
         </header>
         <main>
@@ -71,7 +73,12 @@ function AppContent() {
 
   return (
     <>
-      <Col>
+      <Col 
+        style={{ 
+        backgroundColor: 'rgba(83,83,83,0.21)',
+        borderRadius: '15px', 
+        marginLeft: '20px' 
+        }}>
         <InfoTabs 
         onAddEducation={handleAddEducation} 
         onAddExperience={handleAddExperience}  
@@ -80,7 +87,7 @@ function AppContent() {
         onAddCertifications = {handleAddCertifications}
         />
       </Col>
-      <Col>
+      <Col xs={8}>
         <CVPreview 
         educationEntries={educationEntries} 
         experienceEntries={experienceEntries}

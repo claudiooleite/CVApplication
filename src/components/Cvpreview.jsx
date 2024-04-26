@@ -13,7 +13,7 @@ function CVPreview({person, educationEntries, experienceEntries, projectEntries,
         <>
         
             <div>
-                <h1 style={{ ...personNameStyle, textTransform: 'uppercase' }}><b>{person.name}</b> {person.surname}</h1>
+                <h1 style={{ ...personNameStyle, textTransform: 'uppercase' }}><span><b>{person.name}</b> {person.surname}</span></h1>
             </div>
         
             <div>
