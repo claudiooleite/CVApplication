@@ -1,30 +1,28 @@
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 
 
 function CVPreview({person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries}){
-    const personNameStyle = {
-        display: 'grid',
-        justifyContent: 'center',
-        
-    }
+    
 
     return(
         <>
         
             <div>
-                <h1 style={{ ...personNameStyle, textTransform: 'uppercase' }}><span><b>{person.name}</b> {person.surname}</span></h1>
+                <h1 style={{ textTransform: 'uppercase', marginLeft:"50px", }}><span><b>{person.name}</b>  {person.surname}</span></h1>
             </div>
         
             <div>
-                <h2 style= {{borderBottom: '5px double #1C6EA4', display: 'grid', justifyContent: 'center',}}>{person.headline}</h2>
+                <h2 style= {{borderBottom: '5px double #1C6EA4', marginLeft:"50px",  display: 'inline-block', justifyContent: 'center'}}>{person.headline}</h2>
             </div>
             <div>
-                <a href={`mailto:${person.email}`}>{person.email}</a>
+                <a href={`mailto:${person.email}`}><FontAwesomeIcon icon={faEnvelope} /> {person.email}</a>
             </div>
             <div style= {{gridTemplateColumns: 'repeat(3, auto)', gap: '10px', display: 'grid', justifyContent: 'center',}}>
                 <div>
-                    <a href={person.portfolio}>{person.portfolio}</a>
+                    <a href={person.portfolio}> {person.portfolio}</a>
                 </div>
                 <div>
                     <a href={person.github}>{person.github}</a>
@@ -34,6 +32,7 @@ function CVPreview({person, educationEntries, experienceEntries, projectEntries,
                 </div>
             </div>
             <div>
+                <h1 style= {{borderBottom: '2px solid #1C6EA4'}}>Education</h1>
                 {educationEntries.map((entry, index) => (
                 <div key={index}>
                 <p>{entry.school}</p>

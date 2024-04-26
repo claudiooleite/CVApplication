@@ -87,7 +87,13 @@ function AppContent() {
         onAddCertifications = {handleAddCertifications}
         />
       </Col>
-      <Col xs={8}>
+      <Col 
+      className='preview headers-style'
+      xs={8}
+      style={{ 
+        marginRight: '50px',
+        marginLeft: '50px'
+        }}>
         <CVPreview 
         educationEntries={educationEntries} 
         experienceEntries={experienceEntries}
