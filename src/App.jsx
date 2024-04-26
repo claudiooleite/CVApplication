@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InfoTabs from './components/Tabs';
 import CVPreview from './components/Cvpreview';
-import BtnConvertToPdf from './components/BtnConvertPdf';
+// import BtnConvertToPdf from './components/BtnConvertPdf';
 
    
 function App() {
@@ -28,7 +28,7 @@ function App() {
             </Row>
           </Container>
           <Container>
-            <BtnConvertToPdf/>
+            {/* <BtnConvertToPdf/> */}
           </Container>
         </main>
         

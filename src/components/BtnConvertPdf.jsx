@@ -3,16 +3,10 @@ import ConvertToPdf from './PdfGenerator';
 import CVPreview from './Cvpreview';
 
 
-const BtnConvertToPdf = () => {
-  const contentToConvert = CVPreview;
-
-  const handleConvertClick = () => {
-    ConvertToPdf(contentToConvert);
-  };
-
+const BtnConvertToPdf = ({ person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries }) => {
   return (
     <div>
-      <button onClick={handleConvertClick}>Convert to PDF</button>
+      <button onClick={() => ConvertToPdf(person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries)}>Convert to PDF</button>
     </div>
   );
 };
