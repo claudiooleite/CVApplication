@@ -7,7 +7,9 @@ import Col from 'react-bootstrap/Col';
 
 
 
-function CVPreview({person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries}){
+
+
+function CVPreview({person, educationEntries, experienceEntries, projectEntries, skillsEntries, certificationsEntries, onDeleteEntry}){
     
 
     return(
@@ -45,6 +47,7 @@ function CVPreview({person, educationEntries, experienceEntries, projectEntries,
                                     Graduated on {entry.endSchoolDate} with a grade {entry.grade}.
                             </Card.Text>
                         </Card.Body>
+                        
                     </Card>
                 ))}
             </div>
