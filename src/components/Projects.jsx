@@ -34,7 +34,7 @@ function Projects({onAddProject}){
       <Form.Group className="mb-3" controlId="controlMedia">
         <Form.Label>Media</Form.Label>
         <Form.Control  value={media} onChange={(e) => setMedia(e.target.value)} type="text" />
-        <Button onClick={handleAddProjectClick}>Add Education</Button>
+        <Button onClick={handleAddProjectClick}>Add Project</Button>
       </Form.Group>
     </Form>
   );

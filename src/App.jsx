@@ -89,7 +89,7 @@ function AppContent() {
       </Col>
       <Col 
       className='preview headers-style'
-      xs={8}
+      xs={9}
       style={{ 
         marginRight: '50px',
         marginLeft: '50px'

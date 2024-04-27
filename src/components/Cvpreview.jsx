@@ -1,6 +1,9 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -22,64 +25,96 @@ function CVPreview({person, educationEntries, experienceEntries, projectEntries,
             </div>
             <div style= {{gridTemplateColumns: 'repeat(3, auto)', gap: '10px', display: 'grid', justifyContent: 'center',}}>
                 <div>
-                    <a href={person.portfolio}> {person.portfolio}</a>
+                    <Card.Link href={`https://${person.portfolio}`} target="_blank">{person.portfolio}</Card.Link>
                 </div>
                 <div>
-                    <a href={person.github}>{person.github}</a>
+                    <Card.Link href={`https://${person.github}`} target="_blank">{person.github}</Card.Link>
                 </div>
                 <div>
-                    <a href={person.linkedin}>{person.linkedin}</a>
+                    <Card.Link href={`https://${person.linkedin}`} target="_blank">{person.linkedin}</Card.Link>
                 </div>
             </div>
             <div>
                 <h1 style= {{borderBottom: '2px solid #1C6EA4'}}>Education</h1>
                 {educationEntries.map((entry, index) => (
-                <div key={index}>
-                <p>{entry.school}</p>
-                <p>{entry.degree}</p>
-                <p>{entry.endSchoolDate}</p>
-                <p>{entry.grade}</p>
-                </div>
+                    <Card key={index}>
+                        <Card.Header as="h5">{entry.school}</Card.Header>
+                        <Card.Body>
+                            <Card.Title>{entry.degree}</Card.Title>
+                                <Card.Text>
+                                    Graduated on {entry.endSchoolDate} with a grade {entry.grade}.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
                 ))}
             </div>
-            
             <div>
-                {experienceEntries.map((entry, index) => (
-                <div key={index}>
-                <p>{entry.title}</p>
-                <p>{entry.companyName}</p>
-                <p>{entry.location}</p>
-                <p>{entry.startDate}</p>
-                <p>{entry.endDate}</p>
-                </div>
+                <h1 style= {{borderBottom: '2px solid #1C6EA4'}}>Experience</h1>
+                   {experienceEntries.map((entry, index) => (
+                    <Card key={index}>
+                    <Card.Header as="h5">{entry.title}</Card.Header>
+                        <Card.Body>
+                            <Card.Title>{entry.companyName} / {entry.location}</Card.Title>
+                                <Card.Text>
+                                Worked at {entry.companyName} from {entry.companyName} to {entry.endDate}.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
                 ))}
             </div>
         
             <div>
-                {projectEntries.map((entry, index) => (
-                <div key={index}>
-                <p>{entry.title}</p>
-                <p>{entry.projectName}</p>
-                <p>{entry.description}</p>
-                <p>{entry.media}</p>
+                <div>
+                    <h1 style= {{borderBottom: '2px solid #1C6EA4'}}>Projects</h1>
                 </div>
-                ))}
+                <Row xs={1} md={2} className="g-4">
+                    {projectEntries.map((entry, index) => (
+                        <Col key={index}>
+                            <Card>
+                                <Card.Header as="h5">{entry.title}</Card.Header>
+                                <Card.Body>
+                                    <Card.Title>{entry.projectName}</Card.Title>
+                                        <Card.Text>{entry.description}</Card.Text>
+                                        <Card.Link href={`https://${entry.media}`} target="_blank">{entry.media}</Card.Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
             </div>
             <div>
-                {skillsEntries.map((entry, index) => (
-                <div key={index}>
-                <p>{entry.skills}</p>
+                <div>
+                    <h1 style= {{borderBottom: '2px solid #1C6EA4'}}>Skills</h1>
                 </div>
-                ))}
+                <Row xs={1} md={2} className="g-4">
+                    {skillsEntries.map((entry, index) => (
+                        <Col key={index}>
+                            <Card>
+                                <Card.Header as="h5">{entry.skills}</Card.Header>                           
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
             </div>
+            
             <div>
-                {certificationsEntries.map((entry, index) => (
-                <div key={index}>
-                <p>{entry.certificationName}</p>
-                <p>{entry.issuingOrganization}</p>
-                <p>{entry.issueDate}</p>
+                <div>
+                    <h1 style= {{borderBottom: '2px solid #1C6EA4'}}>Certification</h1>
                 </div>
-                ))}
+                <Row xs={1} md={2} className="g-4">
+                    {certificationsEntries.map((entry, index) => (
+                        <Col key={index}>
+                            <Card>
+                                <Card.Header as="h5">{entry.certificationName}</Card.Header>
+                                <Card.Body>
+                                    <Card.Title>{entry.issuingOrganization}</Card.Title>
+                                        <Card.Text>Issued on {entry.issueDate}.</Card.Text>
+                                        <Card.Link href={`https://${entry.media}`} target="_blank">{entry.media}</Card.Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
             </div>
         
         </>

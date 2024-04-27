@@ -52,7 +52,7 @@ function Experience({onAddExperience}){
         <Form.Control value={endDate} onChange={(e) => setEndDate(e.target.value)} type="date" />
         
       </Form.Group>
-      <Button onClick={handleAddExperienceClick}>Add Education</Button>
+      <Button onClick={handleAddExperienceClick}>Add Experience</Button>
     </Form>
   );
 
